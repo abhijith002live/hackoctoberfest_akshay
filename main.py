@@ -10,6 +10,7 @@ import os
 import flask
 from flask import Flask, render_template, request
 from flask import Flask,render_template
+)
 
 
  
@@ -41,6 +42,7 @@ for x in range(prediction_days, len(scaled_data)):
             
 x_train, y_train = np.array(x_train), np.array(y_train)
 x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1))
+
 
 #Create neural network
 
@@ -133,13 +135,5 @@ def predict():
   
   #if classes[0]>0.5:
   
-  return render_template('index.html',  prediction_text='Future Price = {}'.format(kclass))
-  #else:
-    #return render_template('index.html', user_image=pic, prediction_text='{} is the image of Horse'.format(imagefile.filename))
-
-
-
-if __name__=='__main__':
-
-  app.run(host='localhost', port=5000)
+ 
   
